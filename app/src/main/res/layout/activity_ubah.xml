@@ -1,100 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="6dp"
     tools:context=".Activity.UbahActivity"
     android:background="@drawable/bg_wallpaper">
 
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:background="#000000" />
+
+
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="0dp"
-        android:fontFamily="@font/pokemon_solid"
+        android:fontFamily="@font/fn_kartun"
         android:gravity="center_horizontal"
-        android:rotationX="-42"
-        android:shadowColor="#B3EAFE"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="15"
         android:text="Ubah Data Pokemon"
         android:textColor="#FFFFFF"
-        android:textSize="25sp"
-        android:textStyle="bold" />
-    
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="38dp" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialCardView"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_margin="24dp"
-        android:layout_marginTop="200dp"
         android:backgroundTint="#80000000"
         app:cardCornerRadius="10dp"
         app:cardElevation="4dp"
         app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view2"
-        tools:ignore="ExtraText,MissingConstraints" >
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ExtraText,MissingConstraints">
 
-        <EditText
-            android:id="@+id/et_type"
-            android:layout_width="290dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="24dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/poppins_light"
-            android:hint="Type Pokemon"
-            android:textColor="#FFFFFF" />
-
-        <EditText
-            android:id="@+id/et_nama"
-            android:layout_width="290dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="60dp"
-            android:layout_margin="24dp"
-            android:layout_marginTop="100dp"
-            android:hint="Nama Pokemon" />
-
-        <EditText
-            android:id="@+id/et_ability"
-            android:layout_width="290dp"
-            android:layout_height="30dp"
-            android:layout_margin="24dp"
-            android:layout_marginTop="200dp"
-            android:hint="Ability Pokemon" />
-
-        <EditText
-            android:id="@+id/et_height"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="24dp"
-            android:layout_marginTop="20dp"
-            android:hint="Tinggi Pokemon" />
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/et_weight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="24dp"
-            android:layout_marginTop="20dp"
-            android:hint="Berat Pokemon" />
+            <EditText
+                android:id="@+id/et_nama"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="24dp"
+                android:background="@color/white"
+                android:fontFamily="@font/poppins_light"
+                android:hint="Nama Pokemon"
+                app:layout_constraintBottom_toTopOf="@+id/et_type" />
 
-        <Button
-            android:id="@+id/btn_tambah"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Simpan" />
+            <EditText
+                android:id="@+id/et_type"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_margin="24dp"
+                android:background="@color/white"
+                android:fontFamily="@font/poppins_light"
+                android:hint="Type Pokemon"
+                app:layout_constraintBottom_toTopOf="@+id/et_ability"
+                tools:layout_editor_absoluteX="24dp" />
+
+            <EditText
+                android:id="@+id/et_ability"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_margin="24dp"
+                android:background="@color/white"
+                android:fontFamily="@font/poppins_light"
+                android:hint="Ability Pokemon"
+                app:layout_constraintBottom_toTopOf="@+id/et_height"
+                tools:layout_editor_absoluteX="24dp" />
+
+            <EditText
+                android:id="@+id/et_height"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_margin="24dp"
+                android:background="@color/white"
+                android:fontFamily="@font/poppins_light"
+                android:hint="Tinggi Pokemon"
+                app:layout_constraintBottom_toTopOf="@+id/et_weight"
+                tools:layout_editor_absoluteX="16dp" />
+
+            <EditText
+                android:id="@+id/et_weight"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_margin="24dp"
+                android:background="@color/white"
+                android:fontFamily="@font/poppins_light"
+                android:hint="Berat Pokemon"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="257dp" />
+
+            <Button
+                android:id="@+id/btn_tambah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_light"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+                android:text="Simpan"
+                android:textColor="@color/black"
+                android:layout_margin="10dp"
+                tools:layout_editor_absoluteX="120dp"
+                tools:layout_editor_absoluteY="403dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </com.google.android.material.card.MaterialCardView>
 
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
