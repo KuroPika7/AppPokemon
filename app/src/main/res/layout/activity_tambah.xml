@@ -18,9 +18,9 @@
 
     <ImageView
         android:id="@+id/iv_logo"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:src="@drawable/tx_tambahdt"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:src="@drawable/tx_tambahdt1"
         app:layout_constraintBottom_toTopOf="@+id/materialCardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

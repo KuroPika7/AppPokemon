@@ -15,7 +15,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_splash">
+        android:background="@drawable/bg_splash1">
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
+            android:background="#000000" />
 
         <TextView
             android:id="@+id/tv_name"
@@ -25,7 +31,7 @@
             android:layout_marginStart="8dp"
             android:text="Nama Pokemon"
             tools:ignore="MissingConstraints"
-            android:textColor="#14E4E4"
+            android:textColor="#FFFF00"
             android:textSize="15sp"
             android:fontFamily="@font/fn_kartun"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +45,8 @@
             android:layout_marginEnd="8dp"
             tools:text="ID"
             android:textSize="12sp"
-            android:textColor="#FAFF00"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/poppins_bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
