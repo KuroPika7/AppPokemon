@@ -20,7 +20,7 @@ public class AdapterPokemon extends RecyclerView.Adapter<AdapterPokemon.VHPokemo
 
     public AdapterPokemon(Context ctx, List<ModelPokemon> listpokemon) {
         this.ctx = ctx;
-        listpokemon = listpokemon;
+        this.listpokemon = listpokemon;
     }
 
     @NonNull
