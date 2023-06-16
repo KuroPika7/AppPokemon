@@ -9,11 +9,13 @@
     android:elevation="32dp"
     app:cardUseCompatPadding="true"
     app:cardElevation="1dp"
-    app:cardBackgroundColor="#CA7DF4">
+    app:cardBackgroundColor="#CA7DF4"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_splash">
 
         <TextView
             android:id="@+id/tv_name"
