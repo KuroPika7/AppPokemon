@@ -36,8 +36,6 @@ public class AdapterPokemon extends RecyclerView.Adapter<AdapterPokemon.VHPokemo
 
         holder.tvId.setText(MP.getId());
         holder.tvName.setText(MP.getName());
-        holder.tvType.setText(MP.getType());
-        holder.tvAbility.setText(MP.getAbility());
     }
 
     @Override
@@ -46,15 +44,12 @@ public class AdapterPokemon extends RecyclerView.Adapter<AdapterPokemon.VHPokemo
     }
 
     public class VHPokemon extends RecyclerView.ViewHolder{
-        TextView tvId, tvName, tvType, tvAbility;
+        TextView tvId, tvName;
 
         public VHPokemon(@NonNull View itemView) {
             super(itemView);
             tvId = itemView.findViewById(R.id.tv_id);
             tvName = itemView.findViewById(R.id.tv_name);
-            tvType = itemView.findViewById(R.id.tv_type);
-            tvAbility = itemView.findViewById(R.id.tv_ability);
-
         }
     }
 }

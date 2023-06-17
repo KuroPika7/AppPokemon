@@ -16,7 +16,6 @@
         android:alpha="0.4"
         android:background="#000000" />
 
-
     <ImageView
         android:id="@+id/iv_ubah"
         android:layout_width="400dp"
@@ -42,79 +41,87 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ExtraText,MissingConstraints">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <EditText
                 android:id="@+id/et_nama"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_margin="24dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
                 android:background="@color/white"
                 android:fontFamily="@font/poppins_light"
-                android:hint="Nama Pokemon"
-                app:layout_constraintBottom_toTopOf="@+id/et_type" />
+                android:hint="Nama Pokemon" />
 
             <EditText
                 android:id="@+id/et_type"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_margin="24dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="75dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
                 android:background="@color/white"
                 android:fontFamily="@font/poppins_light"
-                android:hint="Type Pokemon"
-                app:layout_constraintBottom_toTopOf="@+id/et_ability"
-                tools:layout_editor_absoluteX="24dp" />
+                android:hint="Type Pokemon"/>
 
             <EditText
                 android:id="@+id/et_ability"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_margin="24dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="125dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
                 android:background="@color/white"
                 android:fontFamily="@font/poppins_light"
-                android:hint="Ability Pokemon"
-                app:layout_constraintBottom_toTopOf="@+id/et_height"
-                tools:layout_editor_absoluteX="24dp" />
+                android:hint="Ability Pokemon"/>
 
             <EditText
                 android:id="@+id/et_height"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_margin="24dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="175dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
                 android:background="@color/white"
                 android:fontFamily="@font/poppins_light"
-                android:hint="Tinggi Pokemon"
-                app:layout_constraintBottom_toTopOf="@+id/et_weight"
-                tools:layout_editor_absoluteX="16dp" />
+                android:hint="Height Pokemon"/>
 
             <EditText
                 android:id="@+id/et_weight"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:layout_margin="24dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="225dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
                 android:background="@color/white"
                 android:fontFamily="@font/poppins_light"
-                android:hint="Berat Pokemon"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="257dp" />
+                android:hint="Weight Pokemon"/>
 
             <Button
                 android:id="@+id/btn_tambah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_marginTop="420dp"
+                android:layout_marginBottom="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
                 android:fontFamily="@font/poppins_light"
-                android:theme="@style/Theme.AppCompat.Light.NoActionBar"
                 android:text="Simpan"
                 android:textColor="@color/black"
-                android:layout_margin="10dp"
-                tools:layout_editor_absoluteX="120dp"
-                tools:layout_editor_absoluteY="403dp" />
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
 
 
     </com.google.android.material.card.MaterialCardView>

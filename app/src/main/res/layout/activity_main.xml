@@ -5,39 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="6dp"
-    tools:context=".Activity.MainActivity">
-
-    <ImageView
-        android:id="@+id/iv_logo"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:src="@drawable/bg_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".Activity.MainActivity"
+    android:background="#E1F8D4">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_pokemon"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/list_pokemon"
-        app:layout_constraintBaseline_toBottomOf="@drawable/bg_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_logo"
-        />
+        tools:listitem="@layout/list_pokemon" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_tambah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="32dp"
-        android:src="@drawable/ic_tambah"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/ic_tambah" />
 
     <ProgressBar
         android:id="@+id/pb_loading"
@@ -47,6 +34,5 @@
         android:indeterminate="true"
         android:visibility="gone"
         />
-
 
 </RelativeLayout>
