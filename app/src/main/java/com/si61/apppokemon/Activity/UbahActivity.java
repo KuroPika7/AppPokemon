@@ -22,7 +22,7 @@ public class UbahActivity extends AppCompatActivity {
 
     private EditText etName, etType, etAbility, etHeight, etWeight;
     private Button btnTambah;
-    private String nama, type, ability, height, weight;
+    private String name, type, ability, height, weight;
     private String yId, yName, yType, yAbility, yHeight, yWeight;
 
 
@@ -38,13 +38,13 @@ public class UbahActivity extends AppCompatActivity {
         etWeight = findViewById(R.id.et_weight);
         btnTambah = findViewById(R.id.btn_tambah);
 
-        Intent tangkap = getIntent();
-        yId = tangkap.getStringExtra("xId");
-        yName = tangkap.getStringExtra("xName");
-        yType = tangkap.getStringExtra("xType");
-        yAbility = tangkap.getStringExtra("xAbility");
-        yHeight = tangkap.getStringExtra("xHeight");
-        yWeight = tangkap.getStringExtra("xWeight");
+        Intent intent = getIntent();
+        yId = intent.getStringExtra("xId");
+        yName = intent.getStringExtra("xName");
+        yType = intent.getStringExtra("xType");
+        yAbility = intent.getStringExtra("xAbility");
+        yHeight = intent.getStringExtra("xHeight");
+        yWeight = intent.getStringExtra("xWeight");
 
         etName.setText(yName);
         etType.setText(yType);
@@ -55,13 +55,13 @@ public class UbahActivity extends AppCompatActivity {
         btnTambah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nama = etName.getText().toString();
+                name = etName.getText().toString();
                 type = etType.getText().toString();
                 ability = etAbility.getText().toString();
                 height = etHeight.getText().toString();
                 weight = etWeight.getText().toString();
 
-                if(nama.trim().isEmpty()) {
+                if(name.trim().isEmpty()) {
                     etName.setError("Nama Pokemon harus di isi");
                 }
                 else if(type.trim().isEmpty()){
@@ -77,7 +77,7 @@ public class UbahActivity extends AppCompatActivity {
                     etWeight.setError("Tinggi Pokemon harus di isi");
                 }
                 else{
-                    prosesUbah();
+                    ubahData();
 
                 }
 
@@ -85,9 +85,11 @@ public class UbahActivity extends AppCompatActivity {
         });
 
     }
-    private void prosesUbah (){
+    private void ubahData (){
+        int id = Integer.parseInt(yId);
+
         APIRequestData API = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<ModelRespons> proses = API.ardUpdate(yId, nama, type, ability, height, weight);
+        Call<ModelRespons> proses = API.ardUpdate(yId, name, type, ability, height, weight);
 
         proses.enqueue(new Callback<ModelRespons>() {
             @Override

@@ -40,8 +40,9 @@ public class AdapterPokemon extends RecyclerView.Adapter<AdapterPokemon.VHPokemo
     @NonNull
     @Override
     public VHPokemon onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View varView = LayoutInflater.from(ctx).inflate(R.layout.list_pokemon, parent, false);
-        return new VHPokemon(varView);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_pokemon, parent, false);
+        VHPokemon holder = new VHPokemon(view);
+        return holder;
     }
 
     @Override
@@ -53,7 +54,6 @@ public class AdapterPokemon extends RecyclerView.Adapter<AdapterPokemon.VHPokemo
         holder.tvType.setText(MP.getType());
         holder.tvAbility.setText(MP.getAbility());
         holder.tvHeight.setText(MP.getHeight());
-        holder.tvWeight.setText(MP.getWeight());
     }
 
     @Override
@@ -66,12 +66,13 @@ public class AdapterPokemon extends RecyclerView.Adapter<AdapterPokemon.VHPokemo
 
         public VHPokemon(@NonNull View itemView) {
             super(itemView);
+
             tvId = itemView.findViewById(R.id.tv_id);
             tvName = itemView.findViewById(R.id.tv_name);
             tvType = itemView.findViewById(R.id.tv_type);
             tvAbility = itemView.findViewById(R.id.tv_ability);
             tvHeight = itemView.findViewById(R.id.tv_height);
-            tvWeight = itemView.findViewById(R.id.et_weight);
+            tvWeight = itemView.findViewById(R.id.tv_weight);
 
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
@@ -83,15 +84,14 @@ public class AdapterPokemon extends RecyclerView.Adapter<AdapterPokemon.VHPokemo
                     pesan.setPositiveButton("Ubah", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            Intent kirim = new Intent(ctx, UbahActivity.class);
-                            kirim.putExtra("xId", tvId.getText().toString());
-                            kirim.putExtra("xName", tvName.getText().toString());
-                            kirim.putExtra("xType", tvType.getText().toString());
-                            kirim.putExtra("xAbility", tvAbility.getText().toString());
-                            kirim.putExtra("xHeight", tvHeight.getText().toString());
-                            kirim.putExtra("xWeight", tvWeight.getText().toString());
-                            ctx.startActivity(kirim);
-
+                            Intent intent = new Intent(ctx, UbahActivity.class);
+                            intent.putExtra("xId", tvId.getText().toString());
+                            intent.putExtra("xName", tvName.getText().toString());
+                            intent.putExtra("xType", tvType.getText().toString());
+                            intent.putExtra("xAbility", tvAbility.getText().toString());
+                            intent.putExtra("xHeight", tvHeight.getText().toString());
+                            intent.putExtra("xWeight", tvWeight.getText().toString());
+                            ctx.startActivity(intent);
                         }
                     });
 
@@ -102,7 +102,6 @@ public class AdapterPokemon extends RecyclerView.Adapter<AdapterPokemon.VHPokemo
 
                         }
                     });
-
 
                     pesan.show();
                     return false;
