@@ -54,6 +54,7 @@ public class AdapterPokemon extends RecyclerView.Adapter<AdapterPokemon.VHPokemo
         holder.tvType.setText(MP.getType());
         holder.tvAbility.setText(MP.getAbility());
         holder.tvHeight.setText(MP.getHeight());
+        holder.tvWeight.setText(MP.getWeight());
     }
 
     @Override
@@ -84,14 +85,14 @@ public class AdapterPokemon extends RecyclerView.Adapter<AdapterPokemon.VHPokemo
                     pesan.setPositiveButton("Ubah", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int which) {
-                            Intent intent = new Intent(ctx, UbahActivity.class);
-                            intent.putExtra("xId", tvId.getText().toString());
-                            intent.putExtra("xName", tvName.getText().toString());
-                            intent.putExtra("xType", tvType.getText().toString());
-                            intent.putExtra("xAbility", tvAbility.getText().toString());
-                            intent.putExtra("xHeight", tvHeight.getText().toString());
-                            intent.putExtra("xWeight", tvWeight.getText().toString());
-                            ctx.startActivity(intent);
+                            Intent kirim = new Intent(ctx, UbahActivity.class);
+                            kirim.putExtra("xId", tvId.getText().toString());
+                            kirim.putExtra("xName", tvName.getText().toString());
+                            kirim.putExtra("xType", tvType.getText().toString());
+                            kirim.putExtra("xAbility", tvAbility.getText().toString());
+                            kirim.putExtra("xHeight", tvHeight.getText().toString());
+                            kirim.putExtra("xWeight", tvWeight.getText().toString());
+                            ctx.startActivity(kirim);
                         }
                     });
 

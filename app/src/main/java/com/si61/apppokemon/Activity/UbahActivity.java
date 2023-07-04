@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.si61.apppokemon.API.APIRequestData;
@@ -21,7 +22,7 @@ import retrofit2.Response;
 public class UbahActivity extends AppCompatActivity {
 
     private EditText etName, etType, etAbility, etHeight, etWeight;
-    private Button btnTambah;
+    private Button btnSimpan;
     private String name, type, ability, height, weight;
     private String yId, yName, yType, yAbility, yHeight, yWeight;
 
@@ -36,15 +37,15 @@ public class UbahActivity extends AppCompatActivity {
         etAbility = findViewById(R.id.et_ability);
         etHeight = findViewById(R.id.et_height);
         etWeight = findViewById(R.id.et_weight);
-        btnTambah = findViewById(R.id.btn_tambah);
+        btnSimpan = findViewById(R.id.btn_simpan);
 
-        Intent intent = getIntent();
-        yId = intent.getStringExtra("xId");
-        yName = intent.getStringExtra("xName");
-        yType = intent.getStringExtra("xType");
-        yAbility = intent.getStringExtra("xAbility");
-        yHeight = intent.getStringExtra("xHeight");
-        yWeight = intent.getStringExtra("xWeight");
+        Intent tangkap = getIntent();
+        yId = tangkap.getStringExtra("xId");
+        yName = tangkap.getStringExtra("xName");
+        yType = tangkap.getStringExtra("xType");
+        yAbility = tangkap.getStringExtra("xAbility");
+        yHeight = tangkap.getStringExtra("xHeight");
+        yWeight = tangkap.getStringExtra("xWeight");
 
         etName.setText(yName);
         etType.setText(yType);
@@ -52,7 +53,7 @@ public class UbahActivity extends AppCompatActivity {
         etHeight.setText(yHeight);
         etWeight.setText(yWeight);
 
-        btnTambah.setOnClickListener(new View.OnClickListener() {
+        btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 name = etName.getText().toString();
@@ -77,7 +78,7 @@ public class UbahActivity extends AppCompatActivity {
                     etWeight.setError("Tinggi Pokemon harus di isi");
                 }
                 else{
-                    ubahData();
+                    prosesUbah();
 
                 }
 
@@ -85,7 +86,7 @@ public class UbahActivity extends AppCompatActivity {
         });
 
     }
-    private void ubahData (){
+    private void prosesUbah (){
         int id = Integer.parseInt(yId);
 
         APIRequestData API = RetroServer.konekRetrofit().create(APIRequestData.class);
